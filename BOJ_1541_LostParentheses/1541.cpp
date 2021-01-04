@@ -16,25 +16,14 @@ int main() {
     cin >> str;
 
     int num = 0;
-    char sign = '+';
-    str = str + '-';
+    bool check = false;
+    str = str + '+';
     for(int i = 0; i < str.size(); ++i) {
         if(!isnum(str[i])) {
-            if(sign == '+') {
-                result += num;
-                sign = str[i];
-            }
-            else {
-                vals.push_back(num);
-                if(str[i] == '-') {
-                    int temp = 0;
-                    for(int i = 0; i < vals.size(); ++i)
-                        temp += vals[i];
-                    result -= temp;
-                    vals.clear();
-                }
-            }
+            if(check) result -= num;
+            else result += num;
             num = 0;
+            if(str[i] == '-') check = true;
         }
         else {
             num = num * 10 + str[i] - '0';
