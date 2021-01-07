@@ -1,3 +1,6 @@
+// 2021-01-08
+// https://www.acmicpc.net/problem/10757
+
 #include <bits/stdc++.h>
 using namespace std;
 
