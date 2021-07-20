@@ -30,7 +30,6 @@ int main() {
     for(int i = 0; i <= 1000000; ++i) {
         int len = checkNum(i, broken);
         if(len > 0 && ans > abs(n-i) + len) {
-            cout << i << endl;
             ans = abs(n-i) + len;
         }
     }
